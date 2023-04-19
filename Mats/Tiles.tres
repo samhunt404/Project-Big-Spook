@@ -1,3 +1,11 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://bjlt5dm3xn3iv"]
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://bjlt5dm3xn3iv"]
+
+[ext_resource type="Texture2D" uid="uid://c20x1qpmi2eln" path="res://Assets/Tiles/Albedo.png" id="1_cmci2"]
+[ext_resource type="Texture2D" uid="uid://bks0smhavl74q" path="res://Assets/Tiles/Normal.png" id="2_hgyjj"]
+[ext_resource type="Texture2D" uid="uid://tcre37cspqou" path="res://Assets/Tiles/Roughness.png" id="3_vp4h1"]
 
 [resource]
+albedo_texture = ExtResource("1_cmci2")
+roughness_texture = ExtResource("3_vp4h1")
+normal_enabled = true
+normal_texture = ExtResource("2_hgyjj")
