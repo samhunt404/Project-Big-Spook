@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dprfb0xchrx8g"]
+[gd_scene load_steps=8 format=3 uid="uid://dprfb0xchrx8g"]
 
+[ext_resource type="Material" uid="uid://bjlt5dm3xn3iv" path="res://Mats/Tiles.tres" id="1_3hecx"]
 [ext_resource type="PackedScene" uid="uid://efway4ne7cus" path="res://Scenes/Player.tscn" id="1_5fn8u"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kmfvp"]
@@ -28,8 +29,10 @@ mesh = SubResource("PlaneMesh_kmfvp")
 shape = SubResource("ConcavePolygonShape3D_f70qq")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(0.688051, 0, -0.725663, 0, 1, 0, 0.725663, 0, 0.688051, -5.01691, 0.497142, 0)
+transform = Transform3D(0.688051, 0, -0.725663, 0, 1, 0, 0.725663, 0, 0.688051, -5.01691, 4.49714, 0)
 use_collision = true
+size = Vector3(1, 12.9157, 19.5193)
+material = ExtResource("1_3hecx")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.31562, 0, -3.71684)
