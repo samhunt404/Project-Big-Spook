@@ -58,7 +58,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.214589, 2, 0.107575)
 environment = SubResource("Environment_135g5")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.40321, 0.915108, 0, -0.915108, -0.40321, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -0.40321, 0.915108, 0, -0.915108, -0.40321, 0, 18.3321, 0)
 shadow_enabled = true
 
 [node name="Enemy" parent="." instance=ExtResource("3_ks4go")]
