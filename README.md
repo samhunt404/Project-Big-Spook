@@ -1,4 +1,4 @@
-# Project-Big-Spook
+# Initial setup
 
 Install godot at https://godotengine.org/download/windows/
 
@@ -11,3 +11,14 @@ clone the repository with the command "git clone bla-bla-bla"
 scan the project in godot
 
 set godot to connect to git
+
+
+# Editing and coommiting
+
+fetch/pull
+
+make changes
+
+commit
+
+push
