@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dprfb0xchrx8g"]
+[gd_scene load_steps=11 format=3 uid="uid://dprfb0xchrx8g"]
 
 [ext_resource type="Material" uid="uid://bjlt5dm3xn3iv" path="res://Mats/Tiles.tres" id="1_3hecx"]
 [ext_resource type="PackedScene" uid="uid://efway4ne7cus" path="res://Scenes/Player.tscn" id="1_5fn8u"]
@@ -13,6 +13,10 @@ size = Vector2(50, 50)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_f70qq"]
 data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, -25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rmf7e"]
+metallic = 1.0
+roughness = 0.18
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_4pqws"]
 
@@ -50,6 +54,7 @@ use_collision = true
 [node name="CSGTorus3D" type="CSGTorus3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12423, 1.46556, -9.41261)
 use_collision = true
+material = SubResource("StandardMaterial3D_rmf7e")
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_5fn8u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.214589, 2, 0.107575)
