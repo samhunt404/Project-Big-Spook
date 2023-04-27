@@ -1,12 +1,14 @@
 extends CharacterBody3D
 
 
-@export var SPEED := 5.0
-@export var JUMP_VELOCITY := 4.5
-@export var TURN_SPEED := 0.02
+var SPEED := 5.0
+var JUMP_VELOCITY := 4.5
+var TURN_SPEED := 0.02
+
+var fRotation = 0
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -15,7 +17,8 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration and turning
 	var input_dir = Input.get_vector("Turn_Left", "Turn_Right", "Walk_Forward", "Walk_Backward")
-	
+
+	#rotate player
 	rotate_y(input_dir.x * -TURN_SPEED)
 	
 	var direction = (transform.basis * Vector3(0, 0, input_dir.y)).normalized()
@@ -26,5 +29,4 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
 	move_and_slide()
