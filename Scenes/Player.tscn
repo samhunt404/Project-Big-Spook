@@ -1,14 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://efway4ne7cus"]
+[gd_scene load_steps=5 format=3 uid="uid://efway4ne7cus"]
 
+[ext_resource type="Script" path="res://Scripts/PlayerHandler.gd" id="1_cpq4w"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_jnvna"]
+[ext_resource type="Script" path="res://Scenes/CamControl.gd" id="3_xu11n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ucg4c"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Parent" type="Node3D"]
+script = ExtResource("1_cpq4w")
+
+[node name="Player" type="CharacterBody3D" parent="."]
 script = ExtResource("1_jnvna")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("BoxShape3D_ucg4c")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33, 0)
+[node name="CSGBox3D" type="CSGBox3D" parent="Player"]
+
+[node name="ArmMove" type="RemoteTransform3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+remote_path = NodePath("../../CamControl")
+update_rotation = false
+
+[node name="CamControl" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+spring_length = 3.0
+script = ExtResource("3_xu11n")
+
+[node name="Camera3D" type="Camera3D" parent="CamControl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.96046e-08, 3)
